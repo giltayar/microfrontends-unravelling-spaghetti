@@ -17,6 +17,7 @@
     "declarationDir": "types",
     "maxNodeModuleJsDepth": 0,
     "skipLibCheck": true,
+    "rootDirs": ["src/client", "dist"]
   },
   "include": ["src/**/*.js", "src/**/*.d.ts", "test/**/*.js", "test/**/*.d.ts"],
   "exclude": ["node_modules"]

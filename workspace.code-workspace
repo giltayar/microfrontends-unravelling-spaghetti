@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "todo-list-page"
+		},
+		{
+			"path": "todo-list-page-server"
 		}
 	],
 	"settings": {}

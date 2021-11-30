@@ -1,14 +1,5 @@
 {
-  "ignore": ["./node_modules/d3-array/dist/d3-array.js"],
   "plugins": [
-    [
-      "@babel/plugin-transform-typescript",
-      {
-        "isTSX": true
-      }
-    ],
-    "@babel/plugin-syntax-top-level-await",
-    "@babel/plugin-transform-react-jsx",
     [
       "@emotion/babel-plugin",
       {
@@ -20,6 +11,14 @@
           }
         }
       }
+    ],
+    [
+      "htm",
+      {
+        "pragma": "React.createElement",
+        "useBuiltIns": true
+      }
     ]
-  ]
+  ],
+  "babelHelpers": "bundled"
 }
