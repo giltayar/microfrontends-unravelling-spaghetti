@@ -1,11 +1,11 @@
 {
-  "name": "@roundforest/todo-list",
+  "name": "@roundforest/todo-list-page",
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "exports": "./lib/src/todo-list.js",
-  "main": "./lib/src/todo-list.js",
-  "types": "./types/src/todo-list.d.ts",
+  "exports": "./lib/src/todo-list-page.js",
+  "main": "./lib/src/todo-list-page.js",
+  "types": "./types/src/todo-list-page.d.ts",
   "engines": {
     "node": ">=15.0.0"
   },
@@ -38,7 +38,7 @@
   "license": "MIT",
   "repository": {
     "url": "https://github.com/roundforest/mono",
-    "directory": "packages/todo-list-component",
+    "directory": "packages/todo-list-page-component",
     "type": "git"
   },
   "peerDependencies": {

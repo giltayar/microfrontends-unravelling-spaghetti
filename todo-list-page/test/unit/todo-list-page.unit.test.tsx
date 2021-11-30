@@ -8,13 +8,13 @@ const {render, cleanup} = reactTestingLibrary
 
 use(chaiDom)
 
-import {TodoList} from '../../src/todo-list.js'
+import {TodoListPage} from '../../src/todo-list-page.js'
 
-describe('todo-list (unit)', function () {
+describe('todo-list-page (unit)', function () {
   afterEach(cleanup)
 
   it('should start with 0 by default', async () => {
-    const {getByTestId} = render(<TodoList data={{message: 'Todo List'}} />)
+    const {getByTestId} = render(<TodoListPage data={{message: 'Todo List Page'}} />)
 
     expect(getByTestId('content')).to.exist
   })

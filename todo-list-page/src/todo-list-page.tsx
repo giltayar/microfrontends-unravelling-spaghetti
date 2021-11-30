@@ -9,15 +9,15 @@ import {
   BioAppFooter,
 } from '@roundforest/bio-organisms'
 
-export interface TodoListData {
+export interface TodoListPageData {
   message: string
 }
 
-export interface TodoListProps {
-  data: TodoListData
+export interface TodoListPageProps {
+  data: TodoListPageData
 }
 
-export function TodoList({data}: TodoListProps) {
+export function TodoListPage({data}: TodoListPageProps) {
   const strings = useTranslation()
 
   return (

@@ -8,7 +8,7 @@ import {Target} from '@applitools/eyes-webdriverio'
 const __filename = new URL(import.meta.url).pathname
 const __dirname = path.dirname(__filename)
 
-describe('todo-list (e2e)', function () {
+describe('todo-list-page (e2e)', function () {
   const {baseUrl, teardown: rollupTeardown} = before(() =>
     serveSiteViaRollup(path.resolve(__dirname, 'fixtures/site-with-component'), {
       rollupConfigFile: path.resolve(__dirname, 'fixtures/site-with-component/rollup.config.mjs'),
@@ -19,7 +19,7 @@ describe('todo-list (e2e)', function () {
     automateBrowserWithWebdriverIO(baseUrl(), {browser: process.env.BROWSER}),
   )
 
-  const {eyes, finish} = before(() => automateGridEyesWithWebdriverIO('TodoList'))
+  const {eyes, finish} = before(() => automateGridEyesWithWebdriverIO('TodoListPage'))
 
   after(async () => finish()?.())
   after(() => teardown()?.())
