@@ -1,0 +1,24 @@
+{
+  "babelHelpers": "bundled",
+  "extensions": [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"],
+  "plugins": [
+    [
+      "@babel/plugin-transform-typescript",
+      {
+        "isTSX": true
+      }
+    ],
+    [
+      "@emotion/babel-plugin",
+      {
+        "importMap": {
+          "@roundforest/emotion-styled": {
+            "styled": {
+              "canonicalImport": ["@emotion/styled", "default"]
+            }
+          }
+        }
+      }
+    ]
+  ]
+}

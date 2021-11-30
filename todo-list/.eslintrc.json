@@ -1,0 +1,62 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {"jsx": true}
+  },
+  "extends": [
+    "plugin:node/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "@reggev/eslint-plugin-it-should-be-skipped",
+    "prettier",
+    "mocha-no-only",
+    "node",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "react/display-name": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": ["warn"],
+    "no-warning-comments": [
+      "warn",
+      {"terms": ["fixme", "removeme", "xxx", "@@@"], "location": "anywhere"}
+    ],
+    "no-process-exit": "off",
+    "no-const-assign": "error",
+    "no-this-before-super": "error",
+    "no-undef": "off",
+    "no-unreachable": "warn",
+    "constructor-super": "warn",
+    "valid-typeof": "warn",
+    "mocha-no-only/mocha-no-only": "warn",
+    "node/no-unsupported-features/es-syntax": [
+      "error",
+      {
+        "ignores": ["dynamicImport", "modules"]
+      }
+    ],
+    "node/exports-style": ["error", "module.exports"],
+    "node/no-missing-import": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@reggev/it-should-be-skipped/it-should-be-skipped": ["warn"]
+  }
+}
