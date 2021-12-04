@@ -1,6 +1,6 @@
 {
   "name": "microfrontends-unravelling-spaghetti-about-page",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "type": "module",
   "exports": "./src/about-page.js",
@@ -17,12 +17,13 @@
   "scripts": {
     "build": "concurrently -r 'npm:build:*'",
     "build:typescript": "rm -rf types && tsc",
+    "build:play": "node ./dev/generate-html.js ./play about-page-play.js index.html",
     "test": "concurrently -r 'npm:test:*'",
     "test:mocha-parallel": "npm run mocha -- --parallel",
     "test:eslint": "eslint --color --max-warnings=0 '**/*.js'",
     "test:typescript": "tsc --noEmit --emitDeclarationOnly false --pretty",
     "mocha": "mocha --no-timeouts --exit --color 'test/unit/*.test.js' 'test/integ/*.test.js' 'test/e2e/*.test.js'",
-    "play": "node ./dev/generate-html.js ./play about-page-play.js index.html && serve -c play/serve.json ."
+    "play": "serve -c play/serve.json ."
   },
   "keywords": [
     "javascript",
