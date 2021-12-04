@@ -1,14 +1,12 @@
 import {promises as fs} from 'fs'
 import path from 'path'
-import {renderPage} from '../../dist/todo-list-page-server-renderer.js'
-import {fetchData} from '../client/todo-list-page-server-fetcher.js'
+import {renderToString} from 'react-dom/server.js'
+import {html} from 'htm/react/index.js'
+import {TodoListPage} from 'microfrontends-unravelling-spaghetti-todo-list-page'
 
 const __dirname = new URL('.', import.meta.url).pathname
 
-const indexHtmlTemplate = await fs.readFile(
-  path.join(__dirname, '../public/index.template.html'),
-  'utf8',
-)
+const indexHtmlTemplate = await fs.readFile(path.join(__dirname, '../../public/index.html'), 'utf8')
 
 /**
  * A number, or a string containing a number.
@@ -18,16 +16,21 @@ const indexHtmlTemplate = await fs.readFile(
 /**
  * @param {import('fastify').FastifyRequest} request
  * @param {import('fastify').FastifyReply} reply
- * @param {CSPNonce} nonce
  */
-export async function serveHtml(request, reply, nonce) {
+export async function serveHtml(request, reply) {
   const data = await fetchData(request, reply)
-  const content = renderPage({data, nonce})
+  const content = renderToString(html`<${TodoListPage} data=${data} />`)
 
   reply.type('text/html')
-  return indexHtmlTemplate
-    .replace('${style_nonce}', nonce.style)
-    .replace('${script_nonce}', nonce.script)
-    .replace('${data}', JSON.stringify(data))
-    .replace('${content}', content)
+  return indexHtmlTemplate.replace('${data}', JSON.stringify(data)).replace('${content}', content)
+}
+
+/**
+ *
+ * @param {import('fastify').FastifyRequest} _request
+ * @param {import('fastify').FastifyReply} _reply
+ * @returns any
+ */
+async function fetchData(_request, _reply) {
+  return 'Test data'
 }

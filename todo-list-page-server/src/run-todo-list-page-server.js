@@ -2,15 +2,15 @@
 import {format} from 'util'
 import makeLogger, {initializeLoggerOptions} from '@roundforest/pino-global'
 import closeWithGrace from 'close-with-grace'
-import {makeWebApp} from './todo-list-page-server-server.js'
+import {makeWebApp} from './todo-list-page-server.js'
 
-initializeLoggerOptions('todo-list-page-server-server:')
+initializeLoggerOptions('todo-list-page-server:')
 const logger = makeLogger({name: 'run'})
 
 const config = {}
 const {app} = await makeWebApp(config)
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT ?? 3000
 try {
   const baseUrl = await app.listen(port, '0.0.0.0')
 
@@ -28,6 +28,6 @@ closeWithGrace(
       config,
       error: format(err),
     })
-    await await app.close()
+    await app.close()
   },
 )

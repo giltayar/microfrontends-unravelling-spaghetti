@@ -1,14 +1,13 @@
-import {describe, it, before, after} from '@roundforest/mocha-commons'
 import path from 'path'
-import chai from 'chai'
-const {expect} = chai
+import {expect} from 'chai'
+import {describe, it, before, after} from '@roundforest/mocha-commons'
 import {automateBrowserWithWebdriverIO} from '@roundforest/webdriverio-testkit'
-import {makeWebApp} from '../../src/todo-list-page-server-server.js'
+import {makeWebApp} from '../../src/todo-list-page-server.js'
 
 const __filename = new URL(import.meta.url).pathname
 const __dirname = path.dirname(__filename)
 
-describe('todo-list-page-server-server (integ)', function () {
+describe('todo-list-page-server (integ)', function () {
   const {baseUrl, app} = before(async () => {
     const {app} = await makeWebApp({})
 
@@ -28,6 +27,6 @@ describe('todo-list-page-server-server (integ)', function () {
     const b = browser()
 
     await b.url('/')
-    expect(await (await b.$('[role=text]')).getText()).to.equal('Test data')
+    expect(await (await b.$('.App-header')).getText()).to.equal('todos')
   })
 })

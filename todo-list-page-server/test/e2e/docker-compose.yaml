@@ -1,7 +1,6 @@
 version: '3'
 services:
   app:
-    image: roundforestltd/todo-list-page-server-server:${npm_package_version}
+    image: roundforestltd/todo-list-page-server:${npm_package_version}
     ports:
       - 80
-  

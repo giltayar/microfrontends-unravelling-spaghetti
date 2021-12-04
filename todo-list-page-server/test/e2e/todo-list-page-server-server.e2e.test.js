@@ -1,7 +1,7 @@
 import path from 'path'
 import {runDockerCompose} from '@roundforest/docker-compose-testkit'
 import {after, before, describe, it} from '@roundforest/mocha-commons'
-import {fetchAsJson} from '@roundforest/http-commons'
+import {fetchAsJson, fetchAsText} from '@roundforest/http-commons'
 import chaiSubset from 'chai-subset'
 import {expect, use} from 'chai'
 use(chaiSubset)
@@ -9,7 +9,7 @@ use(chaiSubset)
 const __filename = new URL(import.meta.url).pathname
 const __dirname = path.dirname(__filename)
 
-describe('todo-list-page-server-server (e2e)', function () {
+describe('todo-list-page-server (e2e)', function () {
   const {findAddress, teardown} = before(() =>
     runDockerCompose(path.resolve(__dirname, 'docker-compose.yaml'), {
       forceRecreate: !!process.env.FULL_TEST,
@@ -30,5 +30,9 @@ describe('todo-list-page-server-server (e2e)', function () {
 
   it('should be healthy', async () => {
     expect(await fetchAsJson(new URL('/healthz', baseUrl()))).to.eql({})
+  })
+
+  it('should return todos', async () => {
+    expect(await fetchAsText(new URL('/', baseUrl()))).to.include('todos')
   })
 })
