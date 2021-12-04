@@ -1,6 +1,6 @@
 {
   "name": "@roundforest/microfrontends-unravelling-spaghetti-site",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "type": "module",
   "exports": "./src/microfrontends-site.js",
@@ -49,9 +49,6 @@
     "type": "git"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/eslint-parser": "^7.16.3",
-    "@babel/plugin-syntax-top-level-await": "^7.14.5",
     "@reggev/eslint-plugin-it-should-be-skipped": "^1.0.1",
     "@roundforest/docker-compose-testkit": "^1.5.26",
     "@roundforest/mocha-commons": "^2.0.0",
