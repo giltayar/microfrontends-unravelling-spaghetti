@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    image: giltayar/microfrontends-unravelling-spaghetti-site:${npm_package_version}
+    ports:
+      - "3000:80"
+  about-page-server:
+    image: giltayar/microfrontends-unravelling-spaghetti-about-page-server:${MICROFRONTENDS_UNRAVELLING_SPAGHETTI_ABOUT_PAGE_SERVER_VERSION}
+    ports:
+      - 80
+  todo-list-page-server:
+    image: giltayar/microfrontends-unravelling-spaghetti-todo-list-page-server:${MICROFRONTENDS_UNRAVELLING_SPAGHETTI_TODO_LIST_PAGE_SERVER_VERSION}
+    ports:
+      - 80
