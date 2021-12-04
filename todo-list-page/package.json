@@ -1,6 +1,6 @@
 {
   "name": "microfrontends-unravelling-spaghetti-todo-list-page",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "exports": "./src/todo-list-page.js",
@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "concurrently -r 'npm:build:*'",
-    "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
+    "build:typescript": "rm -rf types && tsc",
     "build:dist": "NODE_ENV=production rollup -c",
     "test": "concurrently -r 'npm:test:*'",
     "test:mocha-parallel": "npm run mocha -- --parallel",
@@ -62,6 +62,7 @@
     "@types/chai": "^4.2.22",
     "@types/chai-dom": "^0.0.12",
     "@types/chai-subset": "^1.3.3",
+    "@types/jsdom-global": "^3.0.2",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.11.11",
     "@types/react": "^17.0.37",
@@ -76,12 +77,12 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jsdom": "18.1.1",
+    "jsdom-global": "^3.0.2",
     "mocha": "^9.1.3",
     "prettier": "^2.5.0",
     "rollup": "^2.60.2",
     "rollup-plugin-browsersync": "^1.3.3",
     "rollup-plugin-terser": "^7.0.2",
-    "testdouble": "^3.16.3",
     "typescript": "^4.5.2"
   }
 }
