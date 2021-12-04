@@ -2,6 +2,7 @@ import path from 'path'
 import {expect} from 'chai'
 import {describe, it, before, after} from '@roundforest/mocha-commons'
 import {automateBrowserWithWebdriverIO} from '@roundforest/webdriverio-testkit'
+import retry from 'p-retry'
 import {makeWebApp} from '../../src/todo-list-page-server.js'
 
 const __filename = new URL(import.meta.url).pathname
@@ -28,5 +29,18 @@ describe('todo-list-page-server (integ)', function () {
 
     await b.url('/')
     expect(await (await b.$('.App-header')).getText()).to.equal('todos')
+
+    await retry(
+      async () => {
+        await (await b.$('.new-todo')).setValue('wash dishes\n')
+
+        expect(await (await b.$('.todo .todo-text')).getText()).to.equal('wash dishes')
+      },
+      {
+        retries: 3,
+        minTimeout: 1000,
+        maxTimeout: 1000,
+      },
+    )
   })
 })
