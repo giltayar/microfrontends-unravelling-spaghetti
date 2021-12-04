@@ -1,9 +1,15 @@
 {
 	"folders": [
 		{
+			"name": "about-page",
+			"path": "about-page"
+		},
+		{
+			"name": "todo-list-page",
 			"path": "todo-list-page"
 		},
 		{
+			"name": "todo-list-page-server",
 			"path": "todo-list-page-server"
 		}
 	],
