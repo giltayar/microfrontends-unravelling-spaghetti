@@ -5,12 +5,20 @@
 			"path": "about-page"
 		},
 		{
+			"name": "about-page-server",
+			"path": "about-page-server"
+		},
+		{
 			"name": "todo-list-page",
 			"path": "todo-list-page"
 		},
 		{
 			"name": "todo-list-page-server",
 			"path": "todo-list-page-server"
+		},
+		{
+			"name": "microfrontends-site",
+			"path": "microfrontends-site"
 		}
 	],
 	"settings": {}

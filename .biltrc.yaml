@@ -1,1 +1,6 @@
-{}
+packages:
+- ./about-page
+- ./about-page-server
+- ./todo-list-page
+- ./todo-list-page-server
+- ./microfrontends-site
