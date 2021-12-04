@@ -1,9 +1,0 @@
-{
-  "plugins": [
-    ["htm", {
-      "pragma": "React.createElement",
-      "useBuiltIns": true
-    }]
-  ],
-  "babelHelpers": "bundled"
-}
