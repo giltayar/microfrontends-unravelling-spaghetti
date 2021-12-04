@@ -1,6 +1,6 @@
 {
   "redirects": [
-    {"source": "/", "destination": "/play/"}
+    {"source": "/", "destination": "/play/", "type": 302}
   ],
   "trailingSlash": true
 }
