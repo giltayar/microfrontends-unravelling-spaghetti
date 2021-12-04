@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import {html} from 'htm/react/index.js'
 
-class Todo extends Component {
+export class Todo extends Component {
   state = {
     isEditing: false,
     editValue: this.props.value.todo,
@@ -66,4 +66,3 @@ class Todo extends Component {
         </div>`
   }
 }
-export default Todo

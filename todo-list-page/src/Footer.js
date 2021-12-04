@@ -1,6 +1,6 @@
 import {html} from 'htm/react/index.js'
 
-const Footer = (
+export const Footer = (
   /** @type {{ todos: { todo: string; id: number; completed: boolean}[]; chooseData: any; filter: any; clearCompleted: any; }} */ props,
 ) => {
   const {todos, chooseData, filter, clearCompleted} = props
@@ -47,4 +47,3 @@ const Footer = (
   </div>`
   return html`<div>${todos.length > 0 ? footerSection : html``}</div>`
 }
-export default Footer

@@ -1,6 +1,6 @@
 import {html} from 'htm/react/index.js'
 
-const Links = () => {
+export const Links = () => {
   return html`<div className="Links">
     <div className="double-click-help">Double click to edit a todo.</div>
     <div>Created by <a href="https://github.com/avsssai">Siva Addanki</a></div>
@@ -12,4 +12,3 @@ const Links = () => {
     </div>
   </div>`
 }
-export default Links

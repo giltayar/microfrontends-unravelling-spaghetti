@@ -1,8 +1,8 @@
 import {Component} from 'react'
 import {html} from 'htm/react/index.js'
-import Todo from './Todo.js'
+import {Todo} from './todo.js'
 
-class Todos extends Component {
+export class Todos extends Component {
   filterData = (/** @type {string} */ type) => {
     let chosenData
     switch (type) {
@@ -43,4 +43,3 @@ class Todos extends Component {
     return html`<div className="todoDisplay">${todoDisplay}</div>`
   }
 }
-export default Todos

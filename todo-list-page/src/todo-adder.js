@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import {html} from 'htm/react/index.js'
 
-class TodoAdder extends Component {
+export class TodoAdder extends Component {
   initialState = {
     todo: '',
     completed: false,
@@ -50,4 +50,3 @@ class TodoAdder extends Component {
     </form>`
   }
 }
-export default TodoAdder

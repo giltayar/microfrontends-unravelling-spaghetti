@@ -1,9 +1,9 @@
 import {Component} from 'react'
 import {html} from 'htm/react/index.js'
-import Todos from './Todos.js'
-import TodoAdder from './TodoAdder.js'
-import Footer from './Footer.js'
-import Links from './Links.js'
+import {Todos} from './todos.js'
+import {TodoAdder} from './todo-adder.js'
+import {Footer} from './footer.js'
+import {Links} from './links.js'
 
 export class TodoListPage extends Component {
   state = {
@@ -108,5 +108,3 @@ export class TodoListPage extends Component {
     </div>`
   }
 }
-
-export default TodoListPage
