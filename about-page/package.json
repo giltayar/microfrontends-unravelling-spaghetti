@@ -1,0 +1,69 @@
+{
+  "name": "microfrontends-unravelling-spaghetti-about-page",
+  "version": "1.0.6",
+  "description": "",
+  "type": "module",
+  "exports": "./src/about-page.js",
+  "main": "./src/about-page.js",
+  "types": "./types/src/about-page.d.ts",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "src",
+    "public",
+    "types"
+  ],
+  "scripts": {
+    "build": "concurrently -r 'npm:build:*'",
+    "build:typescript": "rm -rf types && tsc",
+    "test": "concurrently -r 'npm:test:*'",
+    "test:mocha-parallel": "npm run mocha -- --parallel",
+    "test:eslint": "eslint --color --max-warnings=0 '**/*.js'",
+    "test:typescript": "tsc --noEmit --emitDeclarationOnly false --pretty",
+    "mocha": "mocha --no-timeouts --exit --color 'test/unit/*.test.js' 'test/integ/*.test.js' 'test/e2e/*.test.js'",
+    "play": "node ./dev/generate-html.js ./play about-page-play.js index.html && serve -c play/serve.json ."
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "microfrontends"
+  ],
+  "author": "Gil Tayar <gil@tayar.org>",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/giltayar/microfrontends-unravelling-spaghetti",
+    "directory": "about-page",
+    "type": "git"
+  },
+  "peerDependencies": {
+    "htm": "*",
+    "react": "17.x",
+    "react-dom": "17.x"
+  },
+  "devDependencies": {
+    "@jspm/generator": "^1.0.0-beta.19",
+    "@testing-library/react": "^12.1.2",
+    "@types/chai": "^4.2.22",
+    "@types/chai-dom": "^0.0.12",
+    "@types/chai-subset": "^1.3.3",
+    "@types/jsdom-global": "^3.0.2",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.11",
+    "@types/react": "^17.0.37",
+    "chai": "^4.3.4",
+    "chai-dom": "^1.11.0",
+    "chai-subset": "^1.6.0",
+    "concurrently": "^6.4.0",
+    "eslint": "^8.4.0",
+    "eslint-plugin-mocha-no-only": "^1.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jsdom": "19.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^9.1.3",
+    "prettier": "^2.5.0",
+    "serve": "^13.0.2",
+    "typescript": "^4.5.2"
+  }
+}
