@@ -1,0 +1,92 @@
+{
+  "name": "microfrontends-unravelling-spaghetti-about-page-server",
+  "version": "1.0.2",
+  "description": "",
+  "type": "module",
+  "exports": "./src/about-page-server.js",
+  "main": "./src/about-page-server.js",
+  "bin": {
+    "about-page-server": "src/run-about-page-server.js"
+  },
+  "types": "./types/src/about-page-server.d.ts",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "src",
+    "types",
+    "dist"
+  ],
+  "config": {
+    "docker_node_version": "16.3.0"
+  },
+  "scripts": {
+    "start": "node src/run-about-page-server.js",
+    "build": "concurrently -r 'npm:build:*'",
+    "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
+    "build:public": "node ./dev/generate-html.js ./public about-page-server-client.js index.html",
+    "build:docker": "DOCKER_BUILDKIT=1 docker build -t roundforestltd/about-page-server:${npm_package_version} --secret id=npmrc,src=$(npm get userconfig) --build-arg NODE_VERSION=${npm_package_config_docker_node_version} .",
+    "test": "FULL_TEST=1 concurrently -r 'npm:test:*'",
+    "test:mocha-parallel": "npm run mocha -- --parallel",
+    "test:eslint": "eslint --max-warnings=0 --color '**/*.js'",
+    "test:typescript": "tsc --noEmit --emitDeclarationOnly false --pretty",
+    "postpublish": "concurrently -r 'npm:publish:*'",
+    "publish:docker": "docker push roundforestltd/about-page-server:${npm_package_version}",
+    "mocha": "mocha --no-timeouts --exit --color 'test/unit/*.test.js' 'test/integ/*.test.js' 'test/e2e/*.test.js'"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "microfrontends"
+  ],
+  "author": "Gil Tayar <gil@tayar.org>",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/giltayar/microfrontends-unravelling-spaghetti",
+    "directory": "about-page-server",
+    "type": "git"
+  },
+  "devDependencies": {
+    "@jspm/generator": "^1.0.0-beta.19",
+    "@roundforest/docker-compose-testkit": "^1.5.26",
+    "@roundforest/http-commons": "^3.1.11",
+    "@roundforest/mocha-commons": "^2.0.0",
+    "@roundforest/pino-testkit": "^2.0.7",
+    "@roundforest/promise-commons": "^1.3.0",
+    "@roundforest/scripting-commons": "^1.9.3",
+    "@roundforest/webdriverio-testkit": "^4.2.1",
+    "@types/chai": "^4.2.22",
+    "@types/chai-subset": "^1.3.3",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.11",
+    "@types/react-dom": "^17.0.11",
+    "@types/uuid": "^8.3.3",
+    "chai": "^4.3.4",
+    "chai-subset": "^1.6.0",
+    "concurrently": "^6.4.0",
+    "eslint": "^8.4.0",
+    "eslint-plugin-mocha-no-only": "^1.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "mocha": "^9.1.3",
+    "p-retry": "^5.0.0",
+    "prettier": "^2.5.0",
+    "typescript": "^4.5.2",
+    "uuid": "^8.3.2"
+  },
+  "dependencies": {
+    "@roundforest/frontend-commons": "^2.0.0",
+    "@roundforest/functional-commons": "^1.7.5",
+    "@roundforest/log-request-fastify-plugin": "^1.1.36",
+    "@roundforest/pino-global": "^2.3.6",
+    "close-with-grace": "^1.1.0",
+    "fastify": "^3.24.1",
+    "fastify-helmet": "^5.3.2",
+    "fastify-static": "^4.5.0",
+    "htm": "^3.1.0",
+    "microfrontends-unravelling-spaghetti-about-page": "^1.0.5",
+    "pino": "^7.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
