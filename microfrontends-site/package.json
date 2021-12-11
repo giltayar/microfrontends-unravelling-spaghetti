@@ -1,6 +1,6 @@
 {
   "name": "@roundforest/microfrontends-unravelling-spaghetti-site",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "type": "module",
   "exports": "./src/microfrontends-site.js",
@@ -24,6 +24,7 @@
     "docker_node_version": "16.3.0"
   },
   "scripts": {
+    "start": "MICROFRONTENDS_UNRAVELLING_SPAGHETTI_ABOUT_PAGE_SERVER_VERSION=`version-of microfrontends-unravelling-spaghetti-about-page-server` MICROFRONTENDS_UNRAVELLING_SPAGHETTI_TODO_LIST_PAGE_SERVER_VERSION=`version-of microfrontends-unravelling-spaghetti-todo-list-page-server` docker compose -f test/e2e/docker-compose.yaml up",
     "build": "concurrently -r 'npm:build:*'",
     "build:typescript": "rm -rf types && tsc && cp src/*.d.ts types/src",
     "build:docker": "npm run docker -- --load",
@@ -50,6 +51,7 @@
   },
   "devDependencies": {
     "@reggev/eslint-plugin-it-should-be-skipped": "^1.0.1",
+    "@roundforest/dependencies-commons": "^1.4.0",
     "@roundforest/docker-compose-testkit": "^1.5.26",
     "@roundforest/mocha-commons": "^2.0.0",
     "@roundforest/pino-testkit": "^2.0.7",
