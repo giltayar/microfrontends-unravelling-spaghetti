@@ -1,6 +1,6 @@
 {
   "name": "@roundforest/microfrontends-unravelling-spaghetti-site",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "type": "module",
   "exports": "./src/microfrontends-site.js",
@@ -87,8 +87,8 @@
     "fastify-http-proxy": "^6.2.1",
     "microfrontends-unravelling-spaghetti-about-page": "^1.0.8",
     "microfrontends-unravelling-spaghetti-about-page-server": "^1.0.7",
-    "microfrontends-unravelling-spaghetti-todo-list-page": "^1.0.8",
-    "microfrontends-unravelling-spaghetti-todo-list-page-server": "^1.0.8",
+    "microfrontends-unravelling-spaghetti-todo-list-page": "^1.0.9",
+    "microfrontends-unravelling-spaghetti-todo-list-page-server": "^1.0.9",
     "pino": "^7.5.1"
   }
 }
