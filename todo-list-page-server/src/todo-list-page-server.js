@@ -12,9 +12,7 @@ const __dirname = new URL('.', import.meta.url).pathname
 export async function makeWebApp({}) {
   const app = fastify()
 
-  app.get('/', function (request, reply) {
-    return serveHtml(request, reply)
-  })
+  app.get('/', (request, reply) => serveHtml(request, reply))
 
   app.register(fastifyStatic, {
     root: path.resolve(__dirname, '../public'),

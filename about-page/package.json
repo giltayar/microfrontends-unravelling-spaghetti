@@ -1,6 +1,6 @@
 {
   "name": "microfrontends-unravelling-spaghetti-about-page",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "type": "module",
   "exports": "./src/about-page.js",

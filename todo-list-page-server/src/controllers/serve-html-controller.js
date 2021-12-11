@@ -19,6 +19,7 @@ const indexHtmlTemplate = await fs.readFile(path.join(__dirname, '../../public/i
  */
 export async function serveHtml(request, reply) {
   const data = await fetchData(request, reply)
+
   const content = renderToString(html`<${TodoListPage} data=${data} />`)
 
   reply.type('text/html')

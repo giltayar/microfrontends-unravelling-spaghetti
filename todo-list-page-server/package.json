@@ -1,6 +1,6 @@
 {
   "name": "microfrontends-unravelling-spaghetti-todo-list-page-server",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "type": "module",
   "exports": "./src/todo-list-page-server.js",
