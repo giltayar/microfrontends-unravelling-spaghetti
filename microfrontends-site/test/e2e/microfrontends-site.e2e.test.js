@@ -55,11 +55,15 @@ describe('microfrontends-site (e2e)', function () {
     )
   })
 
-  it('"/about/" should work', async () => {
+  it('"/about/" should work and link to todo list', async () => {
     const b = browser()
 
     await b.url('/about/')
 
     expect(await (await b.$('h1')).getText()).to.equal('About Microfrontends')
+
+    await (await b.$('a[href*="todo"]')).click()
+
+    expect(await (await b.$('.App-header')).getText()).to.equal('todos')
   })
 })

@@ -1,6 +1,6 @@
 {
   "name": "@roundforest/microfrontends-unravelling-spaghetti-site",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "type": "module",
   "exports": "./src/microfrontends-site.js",
@@ -56,15 +56,15 @@
     "@roundforest/promise-commons": "^1.3.0",
     "@roundforest/scripting-commons": "^1.9.3",
     "@roundforest/webdriverio-testkit": "^4.2.1",
-    "@types/chai": "^4.2.22",
+    "@types/chai": "^4.3.0",
     "@types/chai-subset": "^1.3.3",
     "@types/mocha": "^9.0.0",
-    "@types/node": "^16.11.11",
+    "@types/node": "^16.11.12",
     "@types/uuid": "^8.3.3",
     "chai": "^4.3.4",
     "chai-subset": "^1.6.0",
     "concurrently": "^6.4.0",
-    "eslint": "^8.4.0",
+    "eslint": "^8.4.1",
     "eslint-plugin-mocha-no-only": "^1.1.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -72,7 +72,7 @@
     "p-retry": "^5.0.0",
     "prettier": "^2.5.1",
     "prettier-plugin-jsdoc": "^0.3.30",
-    "typescript": "^4.5.2",
+    "typescript": "^4.5.3",
     "uuid": "^8.3.2"
   },
   "dependencies": {
@@ -83,10 +83,10 @@
     "fastify": "^3.24.1",
     "fastify-helmet": "^5.3.2",
     "fastify-http-proxy": "^6.2.1",
-    "microfrontends-unravelling-spaghetti-about-page": "^1.0.7",
-    "microfrontends-unravelling-spaghetti-about-page-server": "^1.0.4",
+    "microfrontends-unravelling-spaghetti-about-page": "^1.0.8",
+    "microfrontends-unravelling-spaghetti-about-page-server": "^1.0.6",
     "microfrontends-unravelling-spaghetti-todo-list-page": "^1.0.7",
-    "microfrontends-unravelling-spaghetti-todo-list-page-server": "^1.0.5",
+    "microfrontends-unravelling-spaghetti-todo-list-page-server": "^1.0.7",
     "pino": "^7.5.1"
   }
 }
