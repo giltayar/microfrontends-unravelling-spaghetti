@@ -9,6 +9,9 @@ export const Links = () => {
       <span>
         <a className="github" href="https://github.com/avsssai/todoMVC">github repo</a>
       </span>
+      <span>
+        <a href="/about/">about</a>
+      </span>
     </div>
   </div>`
 }
