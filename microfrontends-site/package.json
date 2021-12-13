@@ -1,6 +1,6 @@
 {
   "name": "@roundforest/microfrontends-unravelling-spaghetti-site",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "type": "module",
   "exports": "./src/microfrontends-site.js",
