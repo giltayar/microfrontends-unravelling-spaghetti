@@ -1,6 +1,6 @@
 {
   "name": "microfrontends-unravelling-spaghetti-about-page-server",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "type": "module",
   "exports": "./src/about-page-server.js",
@@ -84,7 +84,7 @@
     "fastify-helmet": "^7.0.1",
     "fastify-static": "^4.6.1",
     "htm": "^3.1.0",
-    "microfrontends-unravelling-spaghetti-about-page": "^1.0.8",
+    "microfrontends-unravelling-spaghetti-about-page": "^1.0.9",
     "pino": "^7.9.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
