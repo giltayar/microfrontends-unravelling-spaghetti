@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import {html} from 'htm/react/index.js'
-import {Todo} from './todo.js'
+import {Todo} from './Todo.js'
 
 export class Todos extends Component {
   filterData = (/** @type {string} */ type) => {
