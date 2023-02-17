@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import {html} from 'htm/react/index.js'
+import {html} from 'htm/react'
 import {AboutPage} from 'microfrontends-unravelling-spaghetti-about-page'
 
 ReactDOM.hydrate(html`<${AboutPage} data=${window.__DATA__} />`, document.querySelector('#root'))

@@ -1,6 +1,6 @@
 import fastify from 'fastify'
 import {serveHtml} from './controllers/serve-html-controller.js'
-import fastifyStatic from 'fastify-static'
+import fastifyStatic from '@fastify/static'
 import path from 'path'
 
 const __dirname = new URL('.', import.meta.url).pathname
