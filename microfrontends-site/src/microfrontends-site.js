@@ -1,8 +1,7 @@
 import fastify from 'fastify'
-import proxy from 'fastify-http-proxy'
+import proxy from '@fastify/http-proxy'
 
-/** @param {{}} options */
-export async function makeWebApp({}) {
+export async function makeWebApp() {
   const app = fastify()
 
   app.get('/healthz', async () => ({}))
