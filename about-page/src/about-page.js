@@ -1,4 +1,4 @@
-import {html} from 'htm/react/index.js'
+import {html} from 'htm/react'
 
 export function AboutPage() {
   return html`<h1>About Microfrontends</h1>
