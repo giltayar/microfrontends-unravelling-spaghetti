@@ -1,7 +1,7 @@
 import {promises as fs} from 'fs'
 import path from 'path'
-import {renderToString} from 'react-dom/server.js'
-import {html} from 'htm/react/index.js'
+import {renderToString} from 'react-dom/server'
+import {html} from 'htm/react'
 import {TodoListPage} from 'microfrontends-unravelling-spaghetti-todo-list-page'
 
 const __dirname = new URL('.', import.meta.url).pathname
