@@ -1,6 +1,6 @@
 {
   "name": "microfrontends-unravelling-spaghetti-todo-list-page-server",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "",
   "type": "module",
   "exports": "./src/todo-list-page-server.js",
@@ -27,12 +27,10 @@
     "build:public": "node ./dev/generate-html.js ./public todo-list-page-server-client.js index.html",
     "build:docker": "DOCKER_BUILDKIT=1 docker build -t giltayar/microfrontends-unravelling-spaghetti-todo-list-page-server:${npm_package_version} --secret id=npmrc,src=$(npm get userconfig) --build-arg NODE_VERSION=${npm_package_config_docker_node_version} .",
     "test": "FULL_TEST=1 concurrently -r 'npm:test:*'",
-    "test:mocha-parallel": "npm run mocha -- --parallel",
     "test:eslint": "eslint --max-warnings=0 --color '**/*.js'",
     "test:typescript": "tsc --noEmit --emitDeclarationOnly false --pretty",
     "postpublish": "concurrently -r 'npm:publish:*'",
-    "publish:docker": "docker push giltayar/microfrontends-unravelling-spaghetti-todo-list-page-server:${npm_package_version}",
-    "mocha": "mocha --no-timeouts --exit --color 'test/unit/*.test.js' 'test/integ/*.test.js' 'test/e2e/*.test.js'"
+    "publish:docker": "docker push giltayar/microfrontends-unravelling-spaghetti-todo-list-page-server:${npm_package_version}"
   },
   "keywords": [
     "javascript",
