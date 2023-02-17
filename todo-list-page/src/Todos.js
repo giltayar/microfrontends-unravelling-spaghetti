@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {html} from 'htm/react/index.js'
+import {html} from 'htm/react'
 import {Todo} from './Todo.js'
 
 export class Todos extends Component {

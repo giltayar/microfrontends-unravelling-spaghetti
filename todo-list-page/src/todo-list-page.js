@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {html} from 'htm/react/index.js'
+import {html} from 'htm/react'
 import {Todos} from './Todos.js'
 import {TodoAdder} from './todo-adder.js'
 import {Footer} from './Footer.js'

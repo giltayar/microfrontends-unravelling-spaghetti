@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {html} from 'htm/react/index.js'
+import {html} from 'htm/react'
 
 export class Todo extends Component {
   state = {

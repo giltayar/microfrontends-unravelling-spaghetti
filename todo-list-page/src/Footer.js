@@ -1,4 +1,4 @@
-import {html} from 'htm/react/index.js'
+import {html} from 'htm/react'
 
 export const Footer = (
   /** @type {{ todos: { todo: string; id: number; completed: boolean}[]; chooseData: any; filter: any; clearCompleted: any; }} */ props,

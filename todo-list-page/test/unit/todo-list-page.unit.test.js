@@ -4,7 +4,7 @@ import chaiDom from 'chai-dom'
 import jsdomGlobal from 'jsdom-global'
 import reactTestingLibrary from '@testing-library/react'
 const {render, cleanup} = reactTestingLibrary
-import {html} from 'htm/react/index.js'
+import {html} from 'htm/react'
 
 jsdomGlobal(undefined, {pretendToBeVisual: true, url: 'https://example.com'})
 use(chaiDom)

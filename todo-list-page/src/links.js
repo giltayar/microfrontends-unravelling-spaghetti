@@ -1,4 +1,4 @@
-import {html} from 'htm/react/index.js'
+import {html} from 'htm/react'
 
 export const Links = () => {
   return html`<div className="Links">
